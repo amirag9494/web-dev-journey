@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <h2>Application Portal</h2>
+            
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Jane Doe">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="jane@example.com">
+
+            <label for="position">Desired Position</label>
+            <select id="position" name="position" required>
+                <option value="" disabled selected>Choose role</option>
+                <option value="backend">Backend Developer</option>
+                <option value="frontend">Frontend Developer</option>
+                <option value="fullstack">Full Stack Developer</option>
+            </select>
+
+            <fieldset class="radio-group">
+                <legend>Availability</legend>
+                
+                <div class="radio-option">
+                    <input type="radio" id="full-time" name="availability" value="full-time" required>
+                    <label for="full-time">Full-Time</label>
+                </div>
+                
+                <div class="radio-option">
+                    <input type="radio" id="part-time" name="availability" value="part-time">
+                    <label for="part-time">Part-Time</label>
+                </div>
+            </fieldset>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your message..."></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+</body>
+</html>

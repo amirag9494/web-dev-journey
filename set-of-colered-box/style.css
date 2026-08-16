@@ -1,0 +1,45 @@
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.color-box {
+    width: 120px;
+    height: 120px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.color1 {
+    background-color: #ff5733;
+}
+
+.color2 {
+    background-color: rgb(41, 128, 185);
+}
+
+.color3 {
+    background-color: teal;
+}
+
+.color4 {
+    background-color: hsl(145, 63%, 42%);
+}
+
+.color5 {
+    background-color: #8e44ad;
+}
