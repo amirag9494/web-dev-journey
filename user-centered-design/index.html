@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCD Comprehensive Showcase - E-Commerce Module</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<>
+    <div class="app-container">
+      <!--  Breadcrumbs -->
+       <nav class="Breadcrumbs" aria-label="Breadcrumbs">
+           <a href="#">Home</a> / <a href="#">Shop</a> / <span aria-current="page">Shopping Cart</span>
+       </nav>
+       <!-- Header & Dark Mode -->
+        <header class="header">
+            <h1>UCD Design Lab</h1>
+            <button id="dark-mode-toggle" class="btn-secondary">🌓 Dark Mode</button>
+        </header>
+        <!--  Progress Indication-->
+         <section class="card-section">
+            <div class="checkout-steps">
+                <span class="step active">1.Cart</span> &gt;
+                <span class="step">2.Shipping</span> &gt;
+                <span class="step">3.Payment</span>
+            </div>
+            <div class="Progress-bar-container">
+                <div class="Progress-bar" style="width: 33%;"></div>
+            </div>
+         </section>
+         <!--  Shopping Cart -->
+         <section class="card-section Shopping-cart-section">
+            <h2>Your Shopping Cart (2 items)</h2>
+            <!--first item-->
+            <div class="cart-item">
+                <div class="item-info">
+                    <h4>UI/UX Design Masterclass</h4>
+                    <p class="item-specs">Format: Video Course</p>
+                    <span class="item-price">$49.99</span>
+                </div>
+                <div class="item-actions">
+                    <div class="qty-selector">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+            <!-- Second item-->
+            <div class="cart-item">
+                <div class="item-info">
+                    <h4>Design Systems Handbook</h4>
+                    <p class="item-specs">Format: E-Book</p>
+                    <span class="item-price">$19.99</span>
+                </div>
+                <div class="item-actions">
+                    <div class="qty-selector">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+            <!-- Cart Summary -->
+             <div class="cart-summary">
+                <div class="Summary-row">
+                    <span>Subtotal</span>
+                    <span>$69.98</span>
+                </div>
+                <div class="Summary-row">
+                    <span>Estimated Tax</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="Summary-row total-row">
+                    <span>Total</span>
+                    <span class="total-price">$69.98</span>
+                </div>
+             </div>
+             <button class="btn-primary checkout-btn">Proceed to Secure Checkout</button>
+         </section>
+         <!--  Cards Design & ۹. Progressive Disclosure -->
+          <section class="card-section product-card">
+            <div class="card-body">
+                <h3>Card Best Practices</h3>
+                <p class="card-desc">Cards group related information in an easily digestible container.</p>
+                <button id="toggle-details" class="link-btn">Show More Details ▼</button>
+                <div id="extra-details" class="hidden-content">
+                    <p>Good card design relies on visual hierarchy, clear call-to-actions, and responsive spacing to prevent cognitive overload.</p>
+                </div>
+            </div>
+          </section>
+          <!-- 5. Infinite Scroll Simulation -->
+          <section class="card-section">
+            <h3>Related Products Feed</h3>
+            <div id="Scroll-feed" class="Scroll-feed">
+                <div class="feed-item">Recommended: Advanced Figma Workflows</div>
+            </div>
+            <button id="load-more" class="btn-secondary" style="margin-top: 10px; width: 100%;">Load More items</button>
+          </section>
+          <!--  Deferred & Lazy Registration Banner -->
+          <aside class="lazy-reg-banner">
+            <p>Want to save your cart across devices? <button id="lazy-reg-banner" class="link-btn">Create account later</button></p>
+          </aside>    
+    </div>
+    <!-- Modal Dialog Overlay -->
+     <div id="modal-dialog" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Cart Assistance</h3>
+            <p>Need help with your order? Our support team is available 24/7.</p>
+            <button id="close-modal" class="btn-primary">Close</button>
+        </div>
+     </div>
+    <script>
+        document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+
+        const toggleBtn = document.getElementById('toggle-details');
+        const extraDetails = document.getElementById('extra-details');
+        toggleBtn.addEventListener('click', () => {
+            extraDetails.classList.toggle('show');
+            toggleBtn.textContent = extraDetails.classList.contains('show') ? 'Hide Details ▲' : 'Show More Details ▼';
+        });
+
+        const modal = document.getElementById('modal-dialog');
+        document.getElementById('open-modal').addEventListener('click', () => modal.style.display = 'flex');
+        document.getElementById('close-modal').addEventListener('click', () => modal.style.display = 'none');
+
+        let counter = 2;
+        document.getElementById('load-more').addEventListener('click', () => {
+            const feed = document.getElementById('scroll-feed');
+            const newItem = document.createElement('div');
+            newItem.className = 'feed-item';
+            newItem.textContent = `Recommended Item ${counter++}: Frontend Architecture Guide`;
+            feed.appendChild(newItem);
+        });
+
+        document.getElementById('lazy-reg-btn').addEventListener('click', () => {
+            alert('Guest session saved securely! You can checkout without immediate registration.');
+        });
+    </script>
+</body>    
+</HTML>

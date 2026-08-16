@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic & Career Goal Survey</title>
+    <style>
+      body { font-family: sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; }
+      header { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+      main { max-width: 650px; margin: 0 auto; }
+      fieldset { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 18px; margin-bottom: 18px; }
+      legend { font-weight: bold; color: #1a252f; padding: 0 6px; }
+      label { display: block; margin: 10px 0 5px; font-weight: 500; }
+      input[type="text"], input[type="email"], input[type="number"], select, textarea {
+        width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+      }
+      input[type="radio"], input[type="checkbox"] { margin-right: 6px; }
+      .inline-label { display: inline-block; margin-right: 15px; font-weight: normal; }
+      button { background-color: #0066cc; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; display: block; width: 100%; margin-top: 15px; }
+      button:hover { background-color: #0052a3; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Academic & Career Goal Survey</h1>
+      <p>Please share your target degree programs, study focus, and career motivations.</p>
+    </header>
+    <main>
+      <form method="POST" action="https://hotel-feedback.freecodecamp.org">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="full-name">Name (required):</label>
+          <input type="text" id="full-name" name="name" placeholder="e.g., Amir-Hossein" required size="20">
+
+          <label for="email">Email address (required):</label>
+          <input placeholder="example@email.com" required id="email" type="email" name="email" size="20" />
+
+          <label for="age">Age (optional):</label>
+          <input type="number" name="age" id="age" min="15" max="100" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Are you planning to complete your CS degree via credit acceleration?</legend>
+          <input id="yes-option" type="radio" name="credit-acceleration" value="yes" checked />
+          <label for="yes-option" class="inline-label">Yes</label>
+
+          <input id="no-option" type="radio" name="credit-acceleration" value="no" />
+          <label for="no-option" class="inline-label">No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>What drives your target specialization? (Check all that apply)</legend>
+
+          <input type="checkbox" id="backend" name="choice" value="backend" checked />
+          <label for="backend" class="inline-label">Python & Backend Architecture</label>
+
+          <input type="checkbox" id="research" name="choice" value="research" />
+          <label for="research" class="inline-label">Academic CS Research</label>
+          
+          <input type="checkbox" id="daad" name="choice" value="daad" checked />
+          <label for="daad" class="inline-label">DAAD Scholarship / Higher Ed in Germany</label>
+
+          <input type="checkbox" id="werkstudent" name="choice" value="werkstudent" />
+          <label for="werkstudent" class="inline-label">Werkstudent Roles</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Self Assessment</legend>
+
+          <label for="service">How is your study routine consistency?</label>
+          <select name="service" id="service">
+            <option value="poor">Needs Work</option>
+            <option value="satisfactory">Satisfactory</option>
+            <option value="good">Good</option>
+            <option value="very-good">Very Good</option>
+            <option selected value="excellent">Excellent (5-Hour Rule)</option>
+          </select>
+
+          <label for="food">How confident are you with Python & CS Fundamentals?</label>
+          <select name="food" id="food">
+            <option value="poor">Beginner</option>
+            <option value="satisfactory">Intermediate</option>
+            <option value="good">Good</option>
+            <option selected value="very-good">Very Good</option>
+            <option value="excellent">Mastery</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Additional Notes</legend>
+          <label for="comments">Career Goals & Notes:</label>
+          <textarea cols="30" rows="6" name="comments" id="comments" placeholder="Describe your short-term programming milestones..."></textarea>
+        </fieldset>
+
+        <button type="submit">Submit Survey</button>        
+      </form>
+    </main>
+  </body>
+</html>

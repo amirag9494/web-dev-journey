@@ -1,0 +1,71 @@
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: monospace, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #161b22;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    width: 400px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #58a6ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-list > li {
+    margin-bottom: 15px;
+    background: #21262d;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.sub-item {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/* استایل‌های خواسته شده برای لینک‌ها (بر اساس تست‌ها) */
+.sub-item-link {
+    text-decoration: none; /* تستی که می‌گوید نباید خط زیرین داشته باشد */
+    color: #8b949e;        /* رنگ لینک‌های ویزیت‌نشده */
+    transition: color 0.2s ease;
+}
+
+.sub-item-link:link {
+    color: #8b949e;
+}
+
+.sub-item-link:visited {
+    color: #d2a8ff;        /* رنگ تغییریافته پس از بازدید */
+}
+
+.sub-item-link:hover {
+    color: #58a6ff;        /* رنگ هنگام هاور کردن */
+}
+
+.sub-item-link:active {
+    color: #f85149;        /* رنگ هنگام کلیک کردن */
+}
+
+.sub-item-link:focus {
+    outline: 2px solid #3fb950; /* اوت‌لاین رنگی هنگام فوکوس */
+    outline-offset: 2px;
+}

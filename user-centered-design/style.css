@@ -1,0 +1,114 @@
+:root {
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --primary: #0284c7;
+    --primary-hover: #0369a1;
+    --border: #e2e8f0;
+    --danger: #ef4444;
+}
+
+body.dark-theme {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --primary: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --border: #334155;
+    --danger: #f87171;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.breadcrumbs { font-size: 0.85rem; color: var(--text); }
+.breadcrumbs a { color: var(--primary); text-decoration: none; }
+
+.header { display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 1.2rem; margin: 0; }
+
+.card-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.card-section h2, .card-section h3 { margin-top: 0; font-size: 1rem; }
+
+/* Checkout Steps & Progress */
+.checkout-steps { font-size: 0.8rem; margin-bottom: 8px; opacity: 0.8; }
+.step.active { font-weight: bold; color: var(--primary); }
+.progress-bar-container { background-color: var(--border); border-radius: 99px; height: 8px; overflow: hidden; }
+.progress-bar { background-color: var(--primary); height: 100%; }
+
+/* --- Shopping Cart Specific Styles --- */
+.shopping-cart-section h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 12px; }
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+.cart-item:last-of-type { border-bottom: none; }
+
+.item-info h4 { margin: 0 0 4px 0; font-size: 0.9rem; }
+.item-specs { margin: 0 0 6px 0; font-size: 0.75rem; opacity: 0.7; }
+.item-price { font-weight: bold; color: var(--primary); font-size: 0.9rem; }
+
+.item-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+
+.qty-selector {
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; font-size: 0.85rem;
+}
+.qty-btn { background: none; border: none; cursor: pointer; color: var(--text); font-weight: bold; }
+.remove-btn { background: none; border: none; color: var(--danger); font-size: 0.75rem; cursor: pointer; padding: 0; }
+
+.cart-summary { margin: 16px 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; }
+.summary-row { display: flex; justify-content: space-between; }
+.total-row { font-weight: bold; font-size: 1rem; border-top: 1px dashed var(--border); padding-top: 6px; margin-top: 4px; }
+.total-price { color: var(--primary); }
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    width: 100%; padding: 10px; border-radius: 8px; font-weight: 600;
+    cursor: pointer; border: none; font-size: 0.9rem; text-align: center;
+}
+.btn-primary { background-color: var(--primary); color: #fff; }
+.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text); }
+
+/* Progressive Disclosure */
+.card-desc { font-size: 0.9rem; margin-bottom: 8px; opacity: 0.9; }
+.link-btn { background: none; border: none; color: var(--primary); cursor: pointer; padding: 0; font-weight: 600; font-size: 0.85rem; }
+.hidden-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; font-size: 0.85rem; margin-top: 5px; opacity: 0.8; }
+.hidden-content.show { max-height: 100px; }
+
+/* Infinite Scroll Feed */
+.scroll-feed { max-height: 90px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--border); padding: 8px; border-radius: 6px; }
+.feed-item { font-size: 0.85rem; background: var(--bg); padding: 6px; border-radius: 4px; }
+
+/* Lazy Registration Banner */
+.lazy-reg-banner { background-color: var(--card-bg); border: 1px dashed var(--primary); padding: 10px; border-radius: 8px; text-align: center; font-size: 0.85rem; }
+
+/* Modal Dialog */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 100; }
+.modal-content { background: var(--card-bg); padding: 24px; border-radius: 12px; width: 85%; max-width: 300px; text-align: center; }

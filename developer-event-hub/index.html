@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer & Academic Event Hub</title>
+    <style>
+        /* تنظیمات کلی و فونت ساده */
+        body {
+            font-family: sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* هدر و منوی بالا */
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            color: #1a252f;
+        }
+
+        nav a {
+            margin-right: 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* کارت‌های هر بخش */
+        section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        article {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        /* اندازه عکس‌ها که کل صفحه رو نگیره */
+        img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Event Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#upcoming-events">Upcoming Events</a></li>
+                <li><a href="#past-events">Past Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <article>
+                <h3>Python Backend Architecture Webinar</h3>
+                <p>A deep dive into clean architecture and asynchronous programming using Python and FastAPI.</p>
+            </article>
+
+            <article>
+                <h3>Data Structures & Algorithms Bootcamp</h3>
+                <p>An intensive workshop focusing on core computer science algorithms and problem-solving strategies.</p>
+            </article>
+        </section>
+
+        <section id="past-events">
+            <h2>Past Events</h2>
+
+            <article>
+                <h3>Git & GitHub Mastery Workshop</h3>
+                <p>Hands-on session covering advanced Git workflow, branching strategies, and repository management.</p>
+                <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+                alt="A laptop screen displaying lines of source code during a software development workshop">
+            </article>
+
+            <article>
+                <h3>International Academic CS Conference</h3>
+                <p>Keynote lectures on software engineering standards and higher education opportunities in Europe.</p>
+                <img
+                src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80"
+                alt="A speaker presenting slides to an audience at a computer science conference">
+            </article>
+        </section>            
+
+    </main>
+
+</body>
+
+</html>

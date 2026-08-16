@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Learning & Career Survey</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+      --border-color: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #title {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    #description {
+      font-size: 1.05rem;
+      color: #64748b;
+    }
+
+    #survey-form {
+      background: var(--card-bg);
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    .check-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .check-option input[type="radio"],
+    .check-option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    #submit {
+      width: 100%;
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    #submit:hover {
+      background-color: #2980b9;
+    }
+
+    #submit:active {
+      transform: scale(0.99);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1 id="title">Developer Learning & Career Survey</h1>
+      <p id="description">Thank you for taking the time to share your learning goals and development experience!</p>
+    </header>
+
+    <form id="survey-form">
+
+      <!-- Name Field -->
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          class="form-control" 
+          placeholder="Enter your full name" 
+          required 
+        />
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label id="email-label" for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control" 
+          placeholder="Enter your email address" 
+          required 
+        />
+      </div>
+
+      <!-- Age Field -->
+      <div class="form-group">
+        <label id="number-label" for="number">Age (optional)</label>
+        <input 
+          type="number" 
+          id="number" 
+          class="form-control" 
+          min="10" 
+          max="99" 
+          placeholder="Age" 
+        />
+      </div>
+
+      <!-- Dropdown Field -->
+      <div class="form-group">
+        <label for="dropdown">Which role best describes your current status?</label>
+        <select id="dropdown" class="form-control">
+          <option value="" disabled selected>Select current role</option>
+          <option value="student">Student</option>
+          <option value="full-time-job">Full Time Job</option>
+          <option value="freelancer">Freelancer</option>
+          <option value="prefer-not-to-say">Prefer not to say</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Radio Buttons Group -->
+      <div class="form-group">
+        <label>Would you recommend this learning path to a friend?</label>
+        <label class="check-option">
+          <input type="radio" name="recommend" value="definitely" checked /> Definitely
+        </label>
+        <label class="check-option">
+          <input type="radio" name="recommend" value="maybe" /> Maybe
+        </label>
+        <label class="check-option">
+          <input type="radio" name="recommend" value="not-sure" /> Not sure
+        </label>
+      </div>
+
+      <!-- Checkboxes Group -->
+      <div class="form-group">
+        <label>What technologies are you currently learning or interested in? (Check all that apply)</label>
+        <label class="check-option">
+          <input type="checkbox" name="interest" value="python" /> Python / Backend Development
+        </label>
+        <label class="check-option">
+          <input type="checkbox" name="interest" value="html-css" /> HTML & CSS Layouts
+        </label>
+        <label class="check-option">
+          <input type="checkbox" name="interest" value="javascript" /> JavaScript
+        </label>
+        <label class="check-option">
+          <input type="checkbox" name="interest" value="git-github" /> Git & GitHub Workflow
+        </label>
+      </div>
+
+      <!-- Textarea Field -->
+      <div class="form-group">
+        <label for="comments">Any additional comments or career suggestions?</label>
+        <textarea 
+          id="comments" 
+          class="form-control" 
+          placeholder="Enter your comments here..."
+        ></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" id="submit">Submit Survey</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>
