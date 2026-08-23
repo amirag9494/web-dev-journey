@@ -1,0 +1,133 @@
+:root {
+  --bg-color: #f7f3eb;
+  --paper-color: #fffdf9;
+  --text-main: #111111;
+  --border-color: #222222;
+  --accent-color: #8b0000; 
+}
+
+body {
+  font-family: 'Baskerville', 'Georgia', serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+.newspaper-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title title"
+    "feature-article feature-article cover-image"
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: var(--paper-color);
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d3c9b6;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+  border-bottom: 4px double var(--border-color);
+  border-top: 1px solid var(--border-color);
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+
+.title h1 {
+  font-family: 'Anton', 'Georgia', sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  color: var(--text-main);
+}
+
+article {
+  padding: 15px;
+  border-bottom: 1px solid #e0d6c3;
+  position: relative;
+}
+
+.feature-article {
+  grid-area: feature-article;
+  border-right: 1px solid #e0d6c3;
+  padding-right: 20px;
+}
+
+.feature-article h2 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+.cover-image {
+  grid-area: cover-image;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fdfbf7;
+  border: 1px dashed #b5a48b;
+}
+
+.cover-image img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(20%); 
+  border: 1px solid #ccc;
+}
+
+.secondary-article {
+  grid-area: secondary-article;
+  border-right: 1px solid #e0d6c3;
+  padding-right: 20px;
+}
+
+.secondary-article h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.small-article1 {
+  grid-area: small-article1;
+  border-top: 1px solid var(--border-color);
+}
+
+.small-article2 {
+  grid-area: small-article2;
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid #e0d6c3;
+  border-right: 1px solid #e0d6c3;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.small-article3 {
+  grid-area: small-article3;
+  border-top: 1px solid var(--border-color);
+}
+
+.small-article1 h3, 
+.small-article2 h3, 
+.small-article3 h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+p {
+  font-size: 0.95rem;
+  color: #333;
+  text-align: justify;
+}
