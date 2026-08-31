@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Privacy Masker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Email Masker</h1>
+            <p>Mask sensitive parts of your email address for privacy.</p>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <label for="emailInput">Email Address:</label>
+                <input type="email" id="emailInput" placeholder="example@domain.com" autocomplete="off">
+            </div>
+
+            <div class="options-group">
+                <label for="maskChar">Mask Character:</label>
+                <select id="maskChar">
+                    <option value="*">Asterisk (*)</option>
+                    <option value="-">Hyphen (-)</option>
+                    <option value="•">Bullet (•)</option>
+                    <option value="#">Hash (#)</option>
+                </select>
+            </div>
+
+            <button id="maskBtn">Mask Email</button>
+
+            <div id="resultContainer" class="result-box hidden">
+                <span id="resultText"></span>
+                <button id="copyBtn" title="Copy to clipboard">📋 Copy</button>
+            </div>
+
+            <div id="errorMsg" class="error-msg hidden">Please enter a valid email address!</div>
+        </main>
+
+        <section class="history-section">
+            <h3>Recent History</h3>
+            <ul id="historyList">
+                <li class="empty-history">No history yet</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
