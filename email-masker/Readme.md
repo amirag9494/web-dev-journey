@@ -16,9 +16,3 @@ A lightweight, modern web utility built with **Vanilla JavaScript**, **HTML5**, 
 ## Demo 🚀
 
 You can run this project locally by following the steps below. No external dependencies or build tools required!
-
-## How to Run Locally 💻
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/email-privacy-masker.git](https://github.com/your-username/email-privacy-masker.git)
