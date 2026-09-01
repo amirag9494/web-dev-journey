@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Picker & Menu Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Lunch Picker & Menu Manager</h1>
+            <p>Manage your daily lunch options and pick a random meal instantly!</p>
+        </header>
+
+        <div class="input-section">
+            <input type="text" id="lunchInput" placeholder="Enter lunch item (e.g. Tacos)" autocomplete="off">
+            <div class="button-row">
+                <button id="addStartBtn" class="btn secondary">Add to Start</button>
+                <button id="addEndBtn" class="btn primary">Add to End</button>
+            </div>
+        </div>
+
+        <div class="menu-display">
+            <h3>Current Menu</h3>
+            <ul id="menuList" class="menu-list">
+                <li class="empty-msg">The menu is empty.</li>
+            </ul>
+        </div>
+
+        <div class="action-row">
+            <button id="removeFirstBtn" class="btn danger-outline">Remove First</button>
+            <button id="removeLastBtn" class="btn danger-outline">Remove Last</button>
+            <button id="randomBtn" class="btn accent">Pick Random 🎲</button>
+        </div>
+
+        <div id="messageBox" class="message-box">
+            <p>Welcome! Add some delicious meals to start.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
