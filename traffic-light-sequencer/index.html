@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Light Sequencer Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Traffic Light Sequencer</h1>
+      <p class="subtitle">Simulating configurable cycles & anomaly logging</p>
+    </header>
+
+    <main class="app-grid">
+      <section class="control-panel">
+        <h2>Configuration Panel</h2>
+        <div class="form-group">
+          <label for="configSelect">Select Config:</label>
+          <select id="configSelect">
+            <option value="config1">Config 1 (Standard Cycle)</option>
+            <option value="config2">Config 2 (Invalid Phase Test)</option>
+            <option value="config3">Config 3 (Faulted System)</option>
+            <option value="config4">Config 4 (Empty Phases)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cyclesInput">Cycles:</label>
+          <input type="number" id="cyclesInput" value="1" min="1" max="10">
+        </div>
+
+        <button id="startBtn">Run Sequence</button>
+      </section>
+
+      <section class="display-section">
+        <div class="traffic-light-box">
+          <div id="lightRed" class="light red"></div>
+          <div id="lightYellow" class="light yellow"></div>
+          <div id="lightGreen" class="light green"></div>
+        </div>
+        <div id="statusText" class="status-text">Ready to start...</div>
+      </section>
+    </main>
+
+    <section class="terminal-section">
+      <h3>Terminal Logs</h3>
+      <div id="terminalLogs" class="terminal">
+        <p class="log-line">> System initialized. Waiting for execution...</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
