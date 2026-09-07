@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradebook App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gradebook Application</h1>
+        <p class="subtitle">Calculate class averages, assign letter grades, and check student results instantly.</p>
+        
+        <div class="card">
+            <div class="input-group">
+                <label for="scoresInput">Class Scores (comma-separated):</label>
+                <input type="text" id="scoresInput" placeholder="e.g. 92, 88, 77, 57, 100">
+            </div>
+
+            <div class="input-group">
+                <label for="studentScoreInput">Student Score:</label>
+                <input type="number" id="studentScoreInput" placeholder="e.g. 85">
+            </div>
+
+            <button id="calculateBtn">Analyze Performance</button>
+
+            <div id="resultContainer" class="result-box hidden">
+                <h3>Analysis Results:</h3>
+                <p id="resultMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
