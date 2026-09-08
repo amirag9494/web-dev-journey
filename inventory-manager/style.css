@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #00b37e;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #a8a8b3;
+    font-size: 0.95rem;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 24px;
+}
+
+@media(max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background-color: #202024;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    margin-bottom: 24px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #c4c4cc;
+    border-bottom: 1px solid #29292e;
+    padding-bottom: 8px;
+}
+
+.input-group {
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: #a8a8b3;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #121214;
+    border: 1px solid #29292e;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #00b37e;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00b37e;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 6px;
+}
+
+button:hover {
+    background-color: #00875f;
+}
+
+.btn-danger {
+    background-color: #f75a68;
+}
+
+.btn-danger:hover {
+    background-color: #d84552;
+}
+
+.table-container {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #29292e;
+}
+
+th {
+    color: #a8a8b3;
+    font-weight: 600;
+}
+
+.console-card {
+    margin-bottom: 0;
+}
+
+.console-box {
+    background-color: #121214;
+    border: 1px solid #29292e;
+    border-radius: 6px;
+    padding: 12px;
+    height: 130px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+}
+
+.log-item {
+    margin-bottom: 4px;
+    color: #00b37e;
+}
+
+.log-error {
+    color: #f75a68;
+}

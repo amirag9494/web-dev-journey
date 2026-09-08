@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Inventory Dashboard</h1>
+            <p class="subtitle">Manage products, track quantities, and monitor stock levels in real-time.</p>
+        </header>
+
+        <div class="grid-layout">
+            <div class="controls-column">
+                <div class="card">
+                    <h2>Add / Update Product</h2>
+                    <div class="input-group">
+                        <label for="addName">Product Name:</label>
+                        <input type="text" id="addName" placeholder="e.g. Flour">
+                    </div>
+                    <div class="input-group">
+                        <label for="addQty">Quantity:</label>
+                        <input type="number" id="addQty" placeholder="e.g. 20">
+                    </div>
+                    <div class="input-group">
+                        <label for="addPrice">Price ($):</label>
+                        <input type="number" id="addPrice" placeholder="e.g. 15">
+                    </div>
+                    <button id="addBtn">Add to Inventory</button>
+                </div>
+
+                <div class="card">
+                    <h2>Remove Product Stock</h2>
+                    <div class="input-group">
+                        <label for="remName">Product Name:</label>
+                        <input type="text" id="remName" placeholder="e.g. Flour">
+                    </div>
+                    <div class="input-group">
+                        <label for="remQty">Quantity to Remove:</label>
+                        <input type="number" id="remQty" placeholder="e.g. 5">
+                    </div>
+                    <button id="removeBtn" class="btn-danger">Remove Stock</button>
+                </div>
+            </div>
+
+            <div class="display-column">
+                <div class="card">
+                    <h2>Current Inventory</h2>
+                    <div class="table-container">
+                        <table id="inventoryTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card console-card">
+                    <h2>System Console Log</h2>
+                    <div id="consoleLog" class="console-box">
+                        <p class="log-item">[System] Inventory initialized successfully.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
