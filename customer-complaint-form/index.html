@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Complaint Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Customer Complaint Form</h1>
+      <p>We value your feedback. Please fill out the form below to report any issues.</p>
+    </header>
+
+    <form id="complaint-form">
+      <div class="form-control">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" placeholder="John Doe">
+      </div>
+
+      <div class="form-control">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com">
+      </div>
+
+      <div class="form-control">
+        <label for="order-no">Order Number (Starts with 2024, 10 digits)</label>
+        <input type="text" id="order-no" placeholder="2024123456">
+      </div>
+
+      <div class="form-control">
+        <label for="product-code">Product Code (e.g., AB12-C345-DE6)</label>
+        <input type="text" id="product-code" placeholder="AB12-C345-DE6">
+      </div>
+
+      <div class="form-control">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" placeholder="1">
+      </div>
+
+      <fieldset id="complaints-group">
+        <legend>What went wrong? (Select at least one)</legend>
+        <label><input type="checkbox" value="shipping"> Delayed Shipping</label>
+        <label><input type="checkbox" value="damaged"> Damaged Item</label>
+        <label><input type="checkbox" value="wrong-item"> Wrong Item Received</label>
+        <label><input type="checkbox" id="other-complaint" value="other"> Other</label>
+      </fieldset>
+
+      <div class="form-control">
+        <label for="complaint-description">Complaint Description (Required if 'Other' is checked, min 20 chars)</label>
+        <textarea id="complaint-description" rows="4" placeholder="Please describe your issue in detail..."></textarea>
+      </div>
+
+      <fieldset id="solutions-group">
+        <legend>Desired Resolution</legend>
+        <label><input type="radio" name="solution" value="refund"> Full Refund</label>
+        <label><input type="radio" name="solution" value="replacement"> Item Replacement</label>
+        <label><input type="radio" name="solution" value="store-credit"> Store Credit</label>
+        <label><input type="radio" name="solution" id="other-solution" value="other"> Other</label>
+      </fieldset>
+
+      <div class="form-control">
+        <label for="solution-description">Solution Details (Required if 'Other' solution is selected, min 20 chars)</label>
+        <textarea id="solution-description" rows="4" placeholder="Describe your preferred solution..."></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">Submit Complaint</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
