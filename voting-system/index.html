@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Voting System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Voting System</h1>
+      <p class="subtitle">Manage polls securely using Maps and Sets</p>
+    </header>
+    
+    <div class="card">
+      <h2>Add New Option</h2>
+      <div class="input-group">
+        <input type="text" id="optionInput" placeholder="Enter option name...">
+        <button onclick="handleAddNewOption()">Add Option</button>
+      </div>
+      <p id="optionMessage" class="message"></p>
+    </div>
+
+    <div class="card">
+      <h2>Cast a Vote</h2>
+      <div class="input-group">
+        <input type="text" id="voteOptionInput" placeholder="Option name...">
+        <input type="text" id="voterIdInput" placeholder="Voter ID...">
+        <button onclick="handleVote()" class="btn-primary">Submit Vote</button>
+      </div>
+      <p id="voteMessage" class="message"></p>
+    </div>
+
+    <div class="card results-card">
+      <h2>Poll Results</h2>
+      <button onclick="showResultsOnUI()" class="btn-secondary">Refresh Results</button>
+      <pre id="resultsOutput">Click refresh to load results...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function handleAddNewOption() {
+      const val = document.getElementById('optionInput').value;
+      const res = addOption(val);
+      const msgEl = document.getElementById('optionMessage');
+      msgEl.innerText = res;
+      msgEl.style.color = res.includes('added') ? '#27ae60' : '#e74c3c';
+    }
+
+    function handleVote() {
+      const opt = document.getElementById('voteOptionInput').value;
+      const voter = document.getElementById('voterIdInput').value;
+      const res = vote(opt, voter);
+      const msgEl = document.getElementById('voteMessage');
+      msgEl.innerText = res;
+      msgEl.style.color = res.includes('voted') ? '#27ae60' : '#e74c3c';
+    }
+
+    function showResultsOnUI() {
+      document.getElementById('resultsOutput').innerText = displayResults();
+    }
+  </script>
+</body>
+</html>
