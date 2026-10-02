@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Account Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bank-container">
+    <header>
+      <h1>Bank Account</h1>
+      <p>Secure and simple financial transaction management</p>
+    </header>
+
+    <div class="balance-card">
+      <h2>Current Balance</h2>
+      <div id="balance-display" class="balance-amount">$0.00</div>
+    </div>
+
+    <div class="actions-grid">
+      <div class="action-box">
+        <h3>Deposit Funds</h3>
+        <input type="number" id="deposit-input" placeholder="Amount (e.g. 100)">
+        <button id="deposit-btn" onclick="handleDeposit()">Deposit</button>
+      </div>
+
+      <div class="action-box">
+        <h3>Withdraw Funds</h3>
+        <input type="number" id="withdraw-input" placeholder="Amount (e.g. 50)">
+        <button id="withdraw-btn" onclick="handleWithdraw()">Withdraw</button>
+      </div>
+    </div>
+
+    <div class="reports-section">
+      <button onclick="showReports()">Show Transaction Reports</button>
+      <div id="report-output" class="report-box"></div>
+    </div>
+
+    <div id="message-box" class="message-box"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const account = new BankAccount();
+
+    function updateUI() {
+      document.getElementById('balance-display').textContent = `$${account.balance.toFixed(2)}`;
+    }
+
+    function showMessage(text, isError = false) {
+      const msgBox = document.getElementById('message-box');
+      msgBox.textContent = text;
+      msgBox.style.color = isError ? '#a94442' : '#2d6a4f';
+    }
+
+    function handleDeposit() {
+      const input = document.getElementById('deposit-input');
+      const amount = Number(input.value);
+      const res = account.deposit(amount);
+      showMessage(res, amount <= 0);
+      input.value = '';
+      updateUI();
+    }
+
+    function handleWithdraw() {
+      const input = document.getElementById('withdraw-input');
+      const amount = Number(input.value);
+      const res = account.withdraw(amount);
+      showMessage(res, amount <= 0 || amount > account.balance);
+      input.value = '';
+      updateUI();
+    }
+
+    function showReports() {
+      const deposits = account.listAllDeposits();
+      const withdrawals = account.listAllWithdrawals();
+      const reportBox = document.getElementById('report-output');
+      reportBox.innerHTML = `<p>${deposits}</p><p>${withdrawals}</p>`;
+    }
+  </script>
+</body>
+</html>

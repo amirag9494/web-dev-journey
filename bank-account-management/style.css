@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background-color: #f7f3ec;
+  color: #3b2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.bank-container {
+  background-color: #fffdf9;
+  border: 1px solid #e3dcd0;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(60, 47, 47, 0.06);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #2c221e;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 14px;
+  color: #7d6f66;
+}
+
+.balance-card {
+  background-color: #f4ebd0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.balance-card h2 {
+  font-size: 14px;
+  color: #6b5b52;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.balance-amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c221e;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.action-box {
+  background: #fdfbf7;
+  border: 1px solid #eadecc;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-box h3 {
+  font-size: 13px;
+  color: #5c4d44;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #d4c5b9;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #8c6d53;
+}
+
+button {
+  background-color: #5c4d44;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #4a3d35;
+}
+
+.reports-section {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.reports-section > button {
+  width: 100%;
+  background-color: #8c6d53;
+  padding: 10px;
+}
+
+.reports-section > button:hover {
+  background-color: #735742;
+}
+
+.report-box {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 13px;
+  color: #5c4d44;
+  background: #f4ebd0;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.message-box {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
