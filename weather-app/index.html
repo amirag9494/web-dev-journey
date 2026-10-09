@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App | Live City Weather Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-glow"></div>
+    <main class="app-card">
+      <header class="app-header">
+        <h1>Weather Forecast</h1>
+        <p>Select a city to retrieve current atmospheric conditions</p>
+      </header>
+
+      <section class="controls-section">
+        <div class="select-wrapper">
+          <select id="city-select" aria-label="Select City">
+            <option value="">Select a city...</option>
+            <option value="new york">New York</option>
+            <option value="los angeles">Los Angeles</option>
+            <option value="chicago">Chicago</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="london">London</option>
+          </select>
+        </div>
+        <button id="get-weather-btn">Get Weather</button>
+      </section>
+
+      <section id="weather-display" class="weather-panel">
+        <div class="primary-info">
+          <img id="weather-icon" src="" alt="Weather condition icon" />
+          <div class="headings">
+            <h2 id="location">---</h2>
+            <p id="weather-main">---</p>
+          </div>
+          <div class="main-metric">
+            <span id="main-temperature">--</span>
+            <span class="unit">°C</span>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label">Feels Like</span>
+            <span class="metric-value"><span id="feels-like">--</span>°C</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Humidity</span>
+            <span class="metric-value"><span id="humidity">--</span>%</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Wind Speed</span>
+            <span class="metric-value"><span id="wind">--</span> m/s</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Wind Gust</span>
+            <span class="metric-value"><span id="wind-gust">--</span> m/s</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
