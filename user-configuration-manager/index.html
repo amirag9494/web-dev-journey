@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Configuration Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">Python Core Project</div>
+            <h1>Config Manager</h1>
+            <p>Manage, mutate, and inspect dynamic user key-value configurations.</p>
+        </header>
+
+        <main class="grid">
+            <!-- Controls Panel -->
+            <section class="card form-panel">
+                <h2>Manage Settings</h2>
+                <div class="input-group">
+                    <label for="setting-key">Setting Key</label>
+                    <input type="text" id="setting-key" placeholder="e.g. theme, volume">
+                </div>
+                <div class="input-group">
+                    <label for="setting-val">Setting Value</label>
+                    <input type="text" id="setting-val" placeholder="e.g. dark, high">
+                </div>
+
+                <div class="actions">
+                    <button id="btn-add" class="btn btn-primary">Add Setting</button>
+                    <button id="btn-update" class="btn btn-secondary">Update</button>
+                    <button id="btn-delete" class="btn btn-danger">Delete</button>
+                </div>
+
+                <div id="status-message" class="status-box">Ready</div>
+            </section>
+
+            <!-- Viewer Panel -->
+            <section class="card view-panel">
+                <div class="panel-header">
+                    <h2>Active State</h2>
+                    <button id="btn-refresh" class="btn-text">Reset Default</button>
+                </div>
+                <pre id="settings-display">Current User Settings:
+Theme: dark
+Notifications: enabled
+Volume: high
+</pre>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let settings = {
+            'theme': 'dark',
+            'notifications': 'enabled',
+            'volume': 'high'
+        };
+
+        const keyInput = document.getElementById('setting-key');
+        const valInput = document.getElementById('setting-val');
+        const statusBox = document.getElementById('status-message');
+        const display = document.getElementById('settings-display');
+
+        function updateView() {
+            if (Object.keys(settings).length === 0) {
+                display.textContent = 'No settings available.';
+                return;
+            }
+            let text = 'Current User Settings:\n';
+            for (const [k, v] of Object.entries(settings)) {
+                const capKey = k.charAt(0).toUpperCase() + k.slice(1);
+                text += `${capKey}: ${v}\n`;
+            }
+            display.textContent = text;
+        }
+
+        function setStatus(msg, type = 'info') {
+            statusBox.textContent = msg;
+            statusBox.className = `status-box status-${type}`;
+        }
+
+        document.getElementById('btn-add').addEventListener('click', () => {
+            const rawKey = keyInput.value.trim();
+            const rawVal = valInput.value.trim();
+            if (!rawKey || !rawVal) return setStatus('Key and Value are required.', 'error');
+
+            const k = rawKey.toLowerCase();
+            const v = rawVal.toLowerCase();
+
+            if (k in settings) {
+                setStatus(`Setting '${k}' already exists! Cannot add a new setting with this name.`, 'error');
+            } else {
+                settings[k] = v;
+                setStatus(`Setting '${k}' added with value '${v}' successfully!`, 'success');
+                updateView();
+            }
+        });
+
+        document.getElementById('btn-update').addEventListener('click', () => {
+            const rawKey = keyInput.value.trim();
+            const rawVal = valInput.value.trim();
+            if (!rawKey || !rawVal) return setStatus('Key and Value are required.', 'error');
+
+            const k = rawKey.toLowerCase();
+            const v = rawVal.toLowerCase();
+
+            if (k in settings) {
+                settings[k] = v;
+                setStatus(`Setting '${k}' updated to '${v}' successfully!`, 'success');
+                updateView();
+            } else {
+                setStatus(`Setting '${k}' does not exist! Cannot update a non-existing setting.`, 'error');
+            }
+        });
+
+        document.getElementById('btn-delete').addEventListener('click', () => {
+            const rawKey = keyInput.value.trim();
+            if (!rawKey) return setStatus('Key is required for deletion.', 'error');
+
+            const k = rawKey.toLowerCase();
+            if (k in settings) {
+                delete settings[k];
+                setStatus(`Setting '${k}' deleted successfully!`, 'success');
+                updateView();
+            } else {
+                setStatus('Setting not found!', 'error');
+            }
+        });
+
+        document.getElementById('btn-refresh').addEventListener('click', () => {
+            settings = { 'theme': 'dark', 'notifications': 'enabled', 'volume': 'high' };
+            setStatus('Reset to default configuration.', 'info');
+            updateView();
+        });
+
+        updateView();
+    </script>
+</body>
+</html>
