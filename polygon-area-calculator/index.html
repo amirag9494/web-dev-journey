@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polygon Area Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>Polygon Area Calculator</h2>
+    
+    <div class="tabs">
+      <button id="rectTab" class="tab active" onclick="switchShape('rectangle')">Rectangle</button>
+      <button id="sqTab" class="tab" onclick="switchShape('square')">Square</button>
+    </div>
+
+    <form id="calcForm" onsubmit="event.preventDefault(); calculate();">
+      <div id="widthGroup" class="form-group">
+        <label for="width">Width:</label>
+        <input type="number" id="width" min="1" max="50" value="10" required>
+      </div>
+
+      <div id="heightGroup" class="form-group">
+        <label for="height">Height:</label>
+        <input type="number" id="height" min="1" max="50" value="5" required>
+      </div>
+
+      <div id="sideGroup" class="form-group" style="display: none;">
+        <label for="side">Side:</label>
+        <input type="number" id="side" min="1" max="50" value="5">
+      </div>
+
+      <button type="submit" class="btn">Calculate & Draw</button>
+    </form>
+
+    <div class="results">
+      <p><strong>Representation:</strong> <span id="strRep">-</span></p>
+      <p><strong>Area:</strong> <span id="resArea">0</span></p>
+      <p><strong>Perimeter:</strong> <span id="resPerimeter">0</span></p>
+      <p><strong>Diagonal:</strong> <span id="resDiagonal">0</span></p>
+    </div>
+
+    <div class="picture-box">
+      <h3>Picture Representation</h3>
+      <pre id="shapePicture"></pre>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
