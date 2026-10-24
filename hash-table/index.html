@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hash Table Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Hash Table Visualizer</h1>
+      <p class="subtitle">Demonstrating Unicode Hashing & Collision Handling (Separate Chaining)</p>
+    </header>
+
+    <div class="main-layout">
+      <!-- Operations Card -->
+      <section class="card controls">
+        <h2>Operations</h2>
+        
+        <div class="form-group">
+          <label for="keyInput">Key (String):</label>
+          <input type="text" id="keyInput" placeholder="e.g. dear, read, golf" autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="valInput">Value:</label>
+          <input type="text" id="valInput" placeholder="e.g. friend, book, sport">
+        </div>
+
+        <div class="btn-grid">
+          <button id="addBtn" class="btn btn-primary">Add / Update</button>
+          <button id="lookupBtn" class="btn btn-secondary">Lookup</button>
+          <button id="removeBtn" class="btn btn-danger">Remove</button>
+          <button id="resetBtn" class="btn btn-outline">Clear All</button>
+        </div>
+
+        <!-- Hash inspector calculation -->
+        <div class="hash-calculation">
+          <h3>Hash Calculation:</h3>
+          <div id="calcFormula" class="formula">Enter a key to see ASCII sum</div>
+        </div>
+
+        <!-- Status message -->
+        <div id="statusMessage" class="status-box info">Ready</div>
+      </section>
+
+      <!-- Visual Bucket Table -->
+      <section class="card display-panel">
+        <div class="panel-header">
+          <h2>Internal Collection State</h2>
+          <span id="bucketCount" class="badge">0 Buckets</span>
+        </div>
+        
+        <div id="tableViewer" class="bucket-container">
+          <div class="empty-state">Hash table is currently empty. Add a key-value pair!</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
