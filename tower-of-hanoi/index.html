@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tower of Hanoi Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tower of Hanoi Visualizer</h1>
+      <p class="subtitle">Recursive Divide-and-Conquer Algorithm (Optimal $2^n - 1$ Moves)</p>
+    </header>
+
+    <div class="layout">
+      <!-- Stage & Animation Panel -->
+      <section class="card visualizer-card">
+        <div class="canvas-area">
+          <div class="rod-container" id="rod0">
+            <div class="rod-pole"></div>
+            <div class="disks-stack"></div>
+            <div class="rod-base">Rod 1 (Source)</div>
+          </div>
+          <div class="rod-container" id="rod1">
+            <div class="rod-pole"></div>
+            <div class="disks-stack"></div>
+            <div class="rod-base">Rod 2 (Auxiliary)</div>
+          </div>
+          <div class="rod-container" id="rod2">
+            <div class="rod-pole"></div>
+            <div class="disks-stack"></div>
+            <div class="rod-base">Rod 3 (Target)</div>
+          </div>
+        </div>
+
+        <div class="step-metrics">
+          <span>Step: <strong id="stepCounter">0</strong> / <span id="totalSteps">0</span></span>
+          <span id="moveDescription" class="move-desc">Initial state</span>
+        </div>
+      </section>
+
+      <!-- Controls & Log Panel -->
+      <section class="card controls-card">
+        <h2>Controls</h2>
+
+        <div class="form-group">
+          <label for="diskCount">Number of Disks ($n$):</label>
+          <div class="input-inline">
+            <input type="number" id="diskCount" min="1" max="7" value="3">
+            <button id="generateBtn" class="btn btn-primary">Generate</button>
+          </div>
+          <small class="hint">Recommended: 1 to 7 disks</small>
+        </div>
+
+        <div class="playback-controls">
+          <button id="prevBtn" class="btn btn-outline" disabled>⏮ Prev</button>
+          <button id="playBtn" class="btn btn-success">▶ Play</button>
+          <button id="nextBtn" class="btn btn-outline">Next ⏭</button>
+          <button id="resetBtn" class="btn btn-danger">Reset</button>
+        </div>
+
+        <div class="form-group slider-group">
+          <label for="speedSlider">Animation Speed:</label>
+          <input type="range" id="speedSlider" min="100" max="1000" step="100" value="500">
+        </div>
+
+        <div class="log-section">
+          <h3>Algorithm State Output</h3>
+          <pre id="stateLog"></pre>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
